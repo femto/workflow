@@ -1,0 +1,19 @@
+goodie
+hello
+=session[:current_user]
+=current_user
+=message
+
+%p
+  %b This is the workflows that you can start:<br/>
+  -@can_start_workflow_definitions.each do |can_start_workflow_definition|
+    %a{:href=>"workflow_controller/start/#{can_start_workflow_definition.name}"}=can_start_workflow_definition.name
+
+%p
+  %b This is the workflows that currently active:<br />
+  -@applicable_workflow_steps.each do |step|
+    %a{:href=>"workflow_controller/run/#{step.id}"}
+      =step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name
+      = "<br/>"
+
+

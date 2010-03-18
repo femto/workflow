@@ -1,0 +1,18 @@
+
+
+
+<p>
+  <b> This is the workflows that you can start:<br/></b>
+  <%@can_start_workflow_definitions.each do |can_start_workflow_definition| %>
+      <%= link_to can_start_workflow_definition,  "workflow/start/#{can_start_workflow_definition}" %>
+  <% end %>
+</p>
+
+%p
+  %b This is the workflows that currently active:<br />
+  -@applicable_workflow_steps.each do |step|
+    %a{:href=>"workflow_controller/run/#{step.id}"}
+      =step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name
+      = "<br/>"
+
+

@@ -1,0 +1,1094 @@
+/!\ FAILSAFE /!\  Thu Mar 18 21:56:11 +0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 21:57:20 +0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 21:57:23 +0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 21:59:12) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-18 22:00:25) [GET]
+Redirected to http://localhost:3000/workspace
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:00:25) [GET]
+
+ActionController::RoutingError (No route matches "/workspace" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:01:44) [GET]
+
+ActionController::RoutingError (No route matches "/workspace" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-18 22:02:32) [GET]
+Redirected to http://localhost:3000/dashboard
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:02:32) [GET]
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:02:49) [GET]
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:03:03) [GET]
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:03:04) [GET]
+
+ActionController::RoutingError (No route matches "/dashboard" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:03:38) [GET]
+
+ActionView::MissingTemplate (Missing template dash_board/index.erb in view path app/views):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-18 22:03:44) [GET]
+Redirected to http://localhost:3000/dash_board
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:03:44) [GET]
+
+ActionView::MissingTemplate (Missing template dash_board/index.erb in view path app/views):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:04:19) [GET]
+Rendering dash_board/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/dash_board]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:05:09) [GET]
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined local variable or method `current_user' for #<ActionView::Base:0x3fb9070>) on line #2 of app/views/dash_board/index.html.erb:
+1: <%=session[:current_user] %>
+2: Hello <%=current_user %>
+3: <%=message%>
+4: 
+5: %p
+
+    app/views/dash_board/index.html.erb:2
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (16.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:06:54) [GET]
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined local variable or method `current_user' for #<ActionView::Base:0x3db2e70>) on line #2 of app/views/dash_board/index.html.erb:
+1: <%=session[:current_user] %>
+2: Hello <%=current_user %>
+3: <%=message%>
+4: 
+5: %p
+
+    app/views/dash_board/index.html.erb:2
+    D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    -e:1:in `load'
+    -e:1
+
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:07:15) [GET]
+Rendering dash_board/index
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:07:40) [GET]
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined local variable or method `current_user' for #<ActionView::Base:0x40f13c0>) on line #2 of app/views/dash_board/index.html.erb:
+1: <%=session[:current_user] %>
+2: Hello <%=current_user %>
+3: 
+4: 
+5: %p
+
+    app/views/dash_board/index.html.erb:2
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-18 22:07:56) [GET]
+
+ActionView::MissingTemplate (Missing template home/index.erb in view path app/views):
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-18 22:08:24) [GET]
+Redirected to http://localhost:3000/dash_board
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:08:24) [GET]
+Rendering dash_board/index
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://localhost/dash_board]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:10:14) [GET]
+Rendering dash_board/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:10:35) [GET]
+Rendering dash_board/index
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:11:12) [GET]
+Rendering dash_board/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:11:31) [GET]
+Rendering dash_board/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:12:21) [GET]
+Rendering dash_board/index
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/dash_board]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:13:10) [GET]
+Rendering dash_board/index
+Completed in 62ms (View: 47, DB: 0) | 200 OK [http://localhost/dash_board]
+/!\ FAILSAFE /!\  Thu Mar 18 22:14:47 +0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 22:15:30 +0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 22:15:31 +0800 2010
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 22:17:03 +0800 2010
+  Status: 500 Internal Server Error
+  Could not open library 'sqlite3': ÕÒ²»µ½Ö¸¶¨µÄÄ£¿é¡£
+. Could not open library 'libsqlite3.dll': ÕÒ²»µ½Ö¸¶¨µÄÄ£¿é¡£
+. Could not open library 'libsqlite3': ÕÒ²»µ½Ö¸¶¨µÄÄ£¿é¡£
+. Could not open library 'sqlite3.dll': ÕÒ²»µ½Ö¸¶¨µÄÄ£¿é¡£
+
+    D:/Ruby/lib/ruby/gems/1.8/gems/ffi-0.6.3-x86-mswin32/lib/ffi/library.rb:61:in `ffi_lib'
+    D:/Ruby/lib/ruby/gems/1.8/gems/ffi-0.6.3-x86-mswin32/lib/ffi/library.rb:43:in `map'
+    D:/Ruby/lib/ruby/gems/1.8/gems/ffi-0.6.3-x86-mswin32/lib/ffi/library.rb:43:in `ffi_lib'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/api.rb:7
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3.rb:3
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 22:17:36 +0800 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/encoding.rb:9:in `find'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/database.rb:66:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 22:17:38 +0800 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/encoding.rb:9:in `find'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/database.rb:66:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 22:17:53 +0800 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/encoding.rb:9:in `find'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/database.rb:66:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+/!\ FAILSAFE /!\  Thu Mar 18 22:18:13 +0800 2010
+  Status: 500 Internal Server Error
+  uninitialized constant Encoding
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:443:in `load_missing_constant'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:92:in `const_missing'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/encoding.rb:9:in `find'
+    D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-0.0.8/lib/sqlite3/database.rb:66:in `initialize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    D:/Ruby/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/thin.rb:14:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    E:/rails-project/workflow/script/server:3
+    -e:1:in `load'
+    -e:1
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-18 22:18:38) [GET]
+Redirected to http://localhost:3000/dash_board
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:18:38) [GET]
+Rendering dash_board/index
+Completed in 125ms (View: 125, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:18:40) [GET]
+
+ActionController::RoutingError (No route matches "/workflow_controller/start/abc" with {:method=>:get}):
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-18 22:22:41) [GET]
+Redirected to http://localhost:3000/dash_board
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:22:41) [GET]
+Rendering dash_board/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:22:48) [GET]
+
+ActionController::RoutingError (No route matches "/workflow_controller/start/workflow_.workflow" with {:method=>:get}):
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:23:41) [GET]
+
+ActionController::RoutingError (No route matches "/workflow_controller/start/workflow_.workflow" with {:method=>:get}):
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:24:40) [GET]
+
+ActionController::RoutingError (No route matches "/workflow_controller/start/workflow_.workflow" with {:method=>:get}):
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:24:42) [GET]
+
+ActionController::RoutingError (No route matches "/workflow_controller/start/workflow_.workflow" with {:method=>:get}):
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-18 22:24:43) [GET]
+Rendering dash_board/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-18 22:24:44) [GET]
+
+ActionController::RoutingError (No route matches "/workflow_controller/start/workflow_shouwen.workflow" with {:method=>:get}):
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing WorkflowController#start to workflow (for 127.0.0.1 at 2010-03-18 22:25:12) [GET]
+  Parameters: {"id"=>"workflow_shouwen"}
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/workflow/start/workflow_shouwen.workflow]
+
+
+Processing WorkflowController#start to workflow (for 127.0.0.1 at 2010-03-18 22:25:30) [GET]
+  Parameters: {"id"=>"workflow_shouwen"}
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/workflow/start/workflow_shouwen.workflow]
