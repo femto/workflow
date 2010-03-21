@@ -1,0 +1,7 @@
+You are currently running <br/>
+<%= @step.workflow_instance.workflow_definition.name %><br/>
+#insert document here
+<% @step.workflow_step_definition.workflow_transition_definitions.each do |transition| %>
+    <%= link_to  transition.name, url(:action => "transit", :transition => transition.name) %>
+
+<% end %>

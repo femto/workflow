@@ -1,0 +1,12 @@
+You are currently running <br/>
+<%= @step.workflow_instance.workflow_definition.name %><br/>
+
+<form action=../transit>
+  
+  <input type=hidden name=workflow_step_id value=<%= @step.id %>>
+  <%= yield %>
+  <% @step.workflow_step_definition.workflow_transition_definitions.each do |transition| %>
+      <input type=Submit value="<%= transition.name %>" name="workflow_transition"/>
+
+  <% end %>
+</form>

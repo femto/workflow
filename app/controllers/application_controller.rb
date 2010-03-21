@@ -15,4 +15,5 @@ class ApplicationController < ActionController::Base
     $engine ||= WorkflowEngine.new(:store => :activerecord_store)
     #require 'simple_participant_resolvance'
   end
+  alias global_engine global_workflow_engine
 end

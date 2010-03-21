@@ -1,0 +1,6 @@
+
+
+Current Workflow Definition:
+<% @workflow_definitions.each do |workflow_definition| %>
+    <%= link_to workflow_definition.name, :controller=>'workflow', :action=>'start', :id=>workflow_definition.name %>
+<% end %>

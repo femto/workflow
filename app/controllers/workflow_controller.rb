@@ -1,12 +1,15 @@
+load 'workflow/workflow_engine.rb'
+load 'workflow/active_record_workflow_store.rb'
+
 class WorkflowController < ApplicationController
+#  def start
+#
+#    workflow_file = "#{RAILS_ROOT}/workflows/workflow_shouwen.workflow"
+#    workflow_definition = global_workflow_engine.load_workflow_definition_if_not_exist(File.read(workflow_file))
+#    render :text => File.read(workflow_file).gsub!("\n", "<br>")
+#  end
+
   def start
-
-    workflow_file = "#{RAILS_ROOT}/workflows/workflow_shouwen.workflow"
-    workflow_definition = global_workflow_engine.load_workflow_definition_if_not_exist(File.read(workflow_file))
-    render :text => File.read(workflow_file).gsub!("\n", "<br>")
-  end
-
-  def start1
     @workflow_name ||= params[:id]
     workflow_definition = global_engine.get_workflow_definitions(@workflow_name)
     #need we check the participant?
@@ -18,7 +21,10 @@ class WorkflowController < ApplicationController
       @document = document
 
       @workflow_instance_id = "new"
-      render nil, :template => "../../workflow_views" / "#{@document.class.to_s.snake_case}", :layout=>'workflow'
+      @transitions = global_engine.get_transitions(workflow_definition)
+
+      #inline 
+      render :inline => File.read("#{Rails.root}/workflow_views/#{@document.class.to_s.snake_case}.html.erb"), :layout=>'workflow'
     end
   end
 
@@ -26,10 +32,11 @@ class WorkflowController < ApplicationController
     step_id = params[:id]
     @step = WorkflowStep.find_by_id(step_id)
     @document = @step.document
-    render nil, :template => "../../workflow_views" / "#{@document.class.to_s.snake_case}", :layout=>'workflow_run'
+    render :file => "#{Rails.root}/workflow_views/#{@document.class.to_s.snake_case}", :layout=>'workflow_run'
   end
 
   def invoke
+    
     workflow_name = params[:workflow_name]
     workflow_instance_id = params[:workflow_instance_id]
     engine = global_engine
@@ -42,7 +49,9 @@ class WorkflowController < ApplicationController
         if document_cls.is_a? String
           document = Object.const_get(document_cls).new(params[:document])
           document.save!
-
+          #puts params[:workflow_transition]
+          #puts document.class
+          #puts workflow_definition.inspect
           workflow_definition.start(params[:workflow_transition], document)
 
 

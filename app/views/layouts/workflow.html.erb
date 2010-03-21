@@ -1,0 +1,11 @@
+This is workflow layout, using document <%= @document.class %>
+<% form_tag(:action=>'invoke') do %>
+  <input type=hidden name=workflow_name value=<%=@workflow_name%> >
+  <input type=hidden name=workflow_instance_id value=<%=@workflow_instance_id%> >
+  <%= yield %>
+  <%@transitions.each do |transition| %>
+   <%= submit_tag transition.name, :name => "workflow_transition" %>
+  <% end %>
+  
+
+<% end %>
