@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20100321060029) do
   create_table "workflow_instances", :force => true do |t|
     t.integer  "workflow_definition_id"
     t.string   "workflow_name"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

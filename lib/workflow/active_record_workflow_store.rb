@@ -40,7 +40,7 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
       node.transitions.each do |transition|
         transition_definition = WorkflowTransitionDefinition.new
         transition_definition.name = transition.name
-        
+
         #puts node.inspect
         #puts transition_definition.inspect
         transition_definition.to_step_id = transition.to.workflow_step_definition_id
@@ -48,7 +48,7 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
         transition_definition.save!
       end
     end
-    
+
   end
 
   #start a new instance
@@ -95,16 +95,37 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
   end
 
   def transit(step, transition_name, document)
-    
+
     transition = step.workflow_step_definition.workflow_transition_definitions.find(:all, :conditions=> ["name=?", transition_name])[0] #should only have one
     #should warn when transition is not found or more than one found?
     workflow_step = WorkflowStep.new
     workflow_step.workflow_instance_id = step.workflow_instance_id
     workflow_step.workflow_step_definition_id = transition.to_step_id
     workflow_step.document = document
-    workflow_step.save!
+
+
+    handle_incoming_workflow_step(workflow_step)
+
 
     step.delete #move to history_step?
+  end
+
+  def handle_incoming_workflow_step(workflow_step)
+    #if workflow_step is special node, do we need to save it?
+    if workflow_step.workflow_step_definition.nodetype == "fork"
+      #p workflow_step.workflow_step_definition.workflow_transition_definitions
+      # puts workflow_step.workflow_step_definition.workflow_transition_definitions.size
+      workflow_step.workflow_step_definition.workflow_transition_definitions.each do |transition_definition|
+        workflow_step = WorkflowStep.new
+        workflow_step.workflow_instance_id = workflow_step.workflow_instance_id #inherit from it
+        workflow_step.workflow_step_definition_id = transition.to_step_id
+        workflow_step.document = document
+        handle_incoming_workflow_step(workflow_step)
+      end
+    else #normal workflow_step
+      workflow_step.save!
+    end
+
   end
 
   def get_workflow_definitions(workflow_name)
@@ -114,7 +135,7 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
   def can_start_workflow_definitions(user)
     WorkflowDefinition.find(:all, :include => 'workflow_step_definitions',
                             :conditions => ["workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null " +
-                        "or workflow_step_definitions.participant_definition = ?)", user])
+                                    "or workflow_step_definitions.participant_definition = ?)", user])
   end
 
   def get_start_node(workflow_definition)
@@ -129,8 +150,8 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
     if arg.is_a? WorkflowDefinition
       start_node =  get_start_node(arg)
       start_node.workflow_transition_definitions
-    #elsif arg.is_a? WorkflowStep
-    #else raise
+      #elsif arg.is_a? WorkflowStep
+      #else raise
     end
 
   end
