@@ -74,15 +74,15 @@ class WorkflowController < ApplicationController
 
     end
 
-    "You have successfully #{params[:workflow_transition]} a workflow <br/>" +
-            "<a href=/workspace>Back to workspace</a>"
+    render :text=>"You have successfully #{params[:workflow_transition]} a workflow <br/>" +
+            "<a href=/dash_board>Back to DashBoard</a>"
   end
   def transit
     step = WorkflowStep.find(params[:workflow_step_id])
     step.document.update_attributes(params[:document])
     #step.document.amount.to_s
     global_engine.transit(step, params[:workflow_transition], step.document)
-    "You have successfully #{params[:workflow_transition]} a workflow <br/>" +
-            "<a href=/workspace>Back to workspace</a>"
+    render :text=>"You have successfully #{params[:workflow_transition]} a workflow <br/>" +
+            "<a href=/dash_board>Back to DashBoard</a>"
   end
 end
