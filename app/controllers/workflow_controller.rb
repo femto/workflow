@@ -56,10 +56,12 @@ class WorkflowController < ApplicationController
 
 
         end
-      rescue
+      rescue Exception => e
+        puts e.message
+        puts e.backtrace.join("\n")
         @workflow_name = workflow_name
         start
-
+        return
       end
 
     else

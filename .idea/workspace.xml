@@ -2,29 +2,30 @@
 <project version="4">
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="63330d6c-7ba8-42d9-a714-1f1be7e8648b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/workflow/start.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="DELETED" beforePath="E:\rails-project\workflow\db\development.sqlite3" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/workflow/start.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environment.rb" afterPath="$PROJECT_DIR$/config/environment.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/workflow_run.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/workflow_run.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/document.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/workflow_run.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/workflow_run.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workflows/workflow_shouwen.workflow" afterPath="$PROJECT_DIR$/workflows/workflow_shouwen.workflow" />
-      <change type="DELETED" beforePath="E:\rails-project\workflow\lib\simple_participant_resolvance.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dash_board/index.html.erb" afterPath="$PROJECT_DIR$/app/views/dash_board/index.html.erb" />
       <change type="DELETED" beforePath="E:\rails-project\workflow\lib\active_record_workflow_store.rb" afterPath="" />
-      <change type="DELETED" beforePath="E:\rails-project\workflow\&quot;workflows\workflow_收文form.html.erb&quot;" afterPath="" />
       <change type="DELETED" beforePath="E:\rails-project\workflow\lib\workflow_store.rb" afterPath="" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/workflow/index.html.erb" />
       <change type="DELETED" beforePath="E:\rails-project\workflow\lib\workflow_engine.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/workflow_definition.rb" afterPath="$PROJECT_DIR$/app/models/workflow_definition.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workflows/simple.workflow" afterPath="$PROJECT_DIR$/workflows/simple.workflow" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/workflows/workflow_shouwen.form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/workflow_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/workflow_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20100208124408_create_workflow_instances.rb" afterPath="$PROJECT_DIR$/db/migrate/20100208124408_create_workflow_instances.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/workflow/active_record_workflow_store.rb" afterPath="$PROJECT_DIR$/lib/workflow/active_record_workflow_store.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/development.sqlite3" afterPath="$PROJECT_DIR$/db/development.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="DELETED" beforePath="E:\rails-project\workflow\lib\simple_participant_resolvance.rb" afterPath="" />
+      <change type="DELETED" beforePath="E:\rails-project\workflow\&quot;workflows\workflow_收文form.html.erb&quot;" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20100210065723_create_workflow_steps.rb" afterPath="$PROJECT_DIR$/db/migrate/20100210065723_create_workflow_steps.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/workflow_definition.rb" afterPath="$PROJECT_DIR$/app/models/workflow_definition.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/workflows/workflow_shouwen.form.html.erb" />
     </list>
     <ignored path="workflow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,7 +52,7 @@
       <file leaf-file-name="workflow_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/workflow_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="50" selection-start="2802" selection-end="2802" vertical-scroll-proportion="0.0">
+            <state line="60" column="33" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -75,37 +76,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/dash_board/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="157" selection-start="608" selection-end="608" vertical-scroll-proportion="-8.347826">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="workflow_engine.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/workflow/workflow_engine.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="21" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.0">
+            <state line="64" column="25" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="active_record_workflow_store.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="active_record_workflow_store.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/workflow/active_record_workflow_store.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="41" selection-start="5135" selection-end="5135" vertical-scroll-proportion="-12.4">
+            <state line="88" column="138" selection-start="3693" selection-end="3693" vertical-scroll-proportion="0.48286605">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20100208124408_create_workflow_instances.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="20100210065723_create_workflow_steps.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20100210065723_create_workflow_steps.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="34" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20100208124408_create_workflow_instances.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20100208124408_create_workflow_instances.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="22" selection-start="206" selection-end="206" vertical-scroll-proportion="0.19656019">
+            <state line="5" column="22" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -132,7 +133,7 @@
       <file leaf-file-name="dash_board_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/dash_board_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="64" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+            <state line="9" column="79" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -151,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/workflow/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/login_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/logout_controller.rb" />
@@ -164,9 +164,10 @@
         <option value="$PROJECT_DIR$/app/models/workflow_definition.rb" />
         <option value="$PROJECT_DIR$/app/views/dash_board/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/workflow_run.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/workflow_controller.rb" />
-        <option value="$PROJECT_DIR$/lib/workflow/active_record_workflow_store.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20100208124408_create_workflow_instances.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/workflow_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20100210065723_create_workflow_steps.rb" />
+        <option value="$PROJECT_DIR$/lib/workflow/active_record_workflow_store.rb" />
       </list>
     </option>
   </component>
@@ -616,16 +617,16 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25462306" sideWeight="0.2838983" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3418079" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17354196" sideWeight="0.38276836" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16998577" sideWeight="0.6384181" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07041252" sideWeight="0.57344633" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3516949" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41666666" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28531075" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -661,13 +662,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/run.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/workflow.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="77" selection-start="224" selection-end="245" vertical-scroll-proportion="-2.0869565">
@@ -703,20 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/dash_board_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="64" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/workflow/workflow_engine.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="21" selection-start="2128" selection-end="2128" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dash_board/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="157" selection-start="608" selection-end="608" vertical-scroll-proportion="-8.347826">
@@ -727,13 +707,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/layouts/workflow_run.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="36" selection-start="130" selection-end="130" vertical-scroll-proportion="-2.0869565">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/workflow_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="50" selection-start="2802" selection-end="2802" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -759,16 +732,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/workflow/active_record_workflow_store.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20100208124408_create_workflow_instances.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="41" selection-start="5135" selection-end="5135" vertical-scroll-proportion="-12.4">
+        <state line="5" column="22" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20100208124408_create_workflow_instances.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/workflow_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="22" selection-start="206" selection-end="206" vertical-scroll-proportion="0.19656019">
+        <state line="60" column="33" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/dash_board_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="79" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/workflow/workflow_engine.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="25" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20100210065723_create_workflow_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="34" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/workflow/active_record_workflow_store.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="138" selection-start="3693" selection-end="3693" vertical-scroll-proportion="0.48286605">
           <folding />
         </state>
       </provider>

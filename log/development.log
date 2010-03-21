@@ -6125,3 +6125,1220 @@ Migrating to CreateShouWenDocuments (20100321060029)
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_step_definitions")[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("workflow_steps")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_transition_definitions")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-21 16:02:02) [GET]
+Redirected to http://localhost:3000/dash_board
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:02:02) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (16.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 110ms (View: 0, DB: 16) | 200 OK [http://localhost/dash_board]
+
+
+Processing Admin::WorkflowController#index (for 127.0.0.1 at 2010-03-21 16:02:09) [GET]
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;35;1mWorkflowDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_definitions" ("name", "updated_at", "version", "document_cls", "created_at") VALUES('收文', '2010-03-21 08:02:09', '1.0', 'ShouWenDocument', '2010-03-21 08:02:09')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('收文', 1, '2010-03-21 08:02:09', NULL, NULL, 'start', '2010-03-21 08:02:09')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('张三审批', 1, '2010-03-21 08:02:09', 'zhangsan', NULL, NULL, '2010-03-21 08:02:09')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('钱五审批', 1, '2010-03-21 08:02:09', 'qianwu', NULL, NULL, '2010-03-21 08:02:09')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('fork1', 1, '2010-03-21 08:02:10', NULL, NULL, 'fork', '2010-03-21 08:02:10')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('join1', 1, '2010-03-21 08:02:10', NULL, NULL, 'join', '2010-03-21 08:02:10')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('收文结束', 1, '2010-03-21 08:02:10', NULL, NULL, 'end', '2010-03-21 08:02:10')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (15.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('办公室主任会签', '2010-03-21 08:02:10', 4, 1, '2010-03-21 08:02:10')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('张三审批结束', '2010-03-21 08:02:10', 5, 2, '2010-03-21 08:02:10')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('钱五审批结束', '2010-03-21 08:02:10', 5, 3, '2010-03-21 08:02:10')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('张三审批', '2010-03-21 08:02:10', 2, 4, '2010-03-21 08:02:10')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('钱五审批', '2010-03-21 08:02:10', 3, 4, '2010-03-21 08:02:10')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (16.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('会签完成', '2010-03-21 08:02:10', 6, 5, '2010-03-21 08:02:10')[0m
+Rendering admin/workflow/index
+Completed in 1641ms (View: 110, DB: 31) | 200 OK [http://localhost/admin/workflow]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:02:18) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#start (for 127.0.0.1 at 2010-03-21 16:02:22) [GET]
+  Parameters: {"id"=>"收文"}
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 156ms (View: 31, DB: 0) | 200 OK [http://localhost/workflow/start/%E6%94%B6%E6%96%87]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:02:38) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:02:38', '2010-03-21 08:02:38')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:02:38', '2010-03-21 08:02:38')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:02:38', 1, 1, 'ShouWenDocument', 1, '2010-03-21 08:02:38')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+
+ActionController::DoubleRenderError (Can only render or redirect once per action):
+  app/controllers/workflow_controller.rb:78:in `invoke'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (62.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:03:53) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:03:53', '2010-03-21 08:03:53')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:03:53', '2010-03-21 08:03:53')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:03:53', 2, 2, 'ShouWenDocument', 1, '2010-03-21 08:03:53')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 703ms (View: 94, DB: 0) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:04:00) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:04:00', '2010-03-21 08:04:00')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:04:00', '2010-03-21 08:04:00')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:04:00', 3, 3, 'ShouWenDocument', 1, '2010-03-21 08:04:00')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 391ms (View: 0, DB: 0) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:04:45) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:04:45', '2010-03-21 08:04:45')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:04:45', '2010-03-21 08:04:45')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:04:45', 4, 4, 'ShouWenDocument', 1, '2010-03-21 08:04:45')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 406ms (View: 0, DB: 0) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:05:06) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:05:06', '2010-03-21 08:05:06')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:05:06', '2010-03-21 08:05:06')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:05:07', 5, 5, 'ShouWenDocument', 1, '2010-03-21 08:05:07')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 422ms (View: 16, DB: 16) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:05:31) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:05:31', '2010-03-21 08:05:31')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:05:31', '2010-03-21 08:05:31')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:05:31', 6, 6, 'ShouWenDocument', 1, '2010-03-21 08:05:31')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 532ms (View: 16, DB: 0) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:05:44) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:05:44', '2010-03-21 08:05:44')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:05:44', '2010-03-21 08:05:44')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:05:44', 7, 7, 'ShouWenDocument', 1, '2010-03-21 08:05:44')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 422ms (View: 0, DB: 16) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:06:19) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:06:19', '2010-03-21 08:06:19')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:06:19', '2010-03-21 08:06:19')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:06:19', 8, 8, 'ShouWenDocument', 1, '2010-03-21 08:06:19')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:06:19', NULL, NULL, NULL, 2, '2010-03-21 08:06:19')[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:06:19', NULL, NULL, NULL, 3, '2010-03-21 08:06:19')[0m
+  [4;36;1mWorkflowStep Delete all (94.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (8)) [0m
+Completed in 750ms (View: 15, DB: 94) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:06:22) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (62.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:06:58) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (156.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (63.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (93.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRefundRequests (20100208124200)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "refund_requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "amount" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100208124200')[0m
+Migrating to CreateWorkflowInstances (20100208124408)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "workflow_definition_id" integer, "workflow_name" varchar(255), "status" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100208124408')[0m
+Migrating to CreateWorkflowDefinitions (20100208124555)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_definitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "version" varchar(255), "document_cls" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100208124555')[0m
+Migrating to CreateWorkflowSteps (20100210065723)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "workflow_instance_id" integer, "workflow_step_definition_id" integer, "document_type" varchar(255), "document_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100210065723')[0m
+Migrating to CreateWorkflowStepDefinitions (20100210070345)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_step_definitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "participant_definition" varchar(255), "condition" varchar(255), "nodetype" varchar(255), "workflow_definition_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100210070345')[0m
+Migrating to CreateWorkflowTransitionDefinitions (20100210075727)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_transition_definitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "workflow_step_definition_id" integer, "to_step_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100210075727')[0m
+Migrating to CreateShouWenDocuments (20100321060029)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "shou_wen_documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100321060029')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("refund_requests")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("shou_wen_documents")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_definitions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("workflow_instances")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_step_definitions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("workflow_steps")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_transition_definitions")[0m
+
+
+Processing Admin::WorkflowController#index (for 127.0.0.1 at 2010-03-21 16:07:30) [GET]
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowDefinition Create (15.0ms)[0m   [0;1mINSERT INTO "workflow_definitions" ("name", "updated_at", "version", "document_cls", "created_at") VALUES('收文', '2010-03-21 08:07:30', '1.0', 'ShouWenDocument', '2010-03-21 08:07:30')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('收文', 1, '2010-03-21 08:07:30', NULL, NULL, 'start', '2010-03-21 08:07:30')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('张三审批', 1, '2010-03-21 08:07:30', 'zhangsan', NULL, NULL, '2010-03-21 08:07:30')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('钱五审批', 1, '2010-03-21 08:07:30', 'qianwu', NULL, NULL, '2010-03-21 08:07:30')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('fork1', 1, '2010-03-21 08:07:30', NULL, NULL, 'fork', '2010-03-21 08:07:30')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('join1', 1, '2010-03-21 08:07:30', NULL, NULL, 'join', '2010-03-21 08:07:30')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('收文结束', 1, '2010-03-21 08:07:30', NULL, NULL, 'end', '2010-03-21 08:07:30')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('办公室主任会签', '2010-03-21 08:07:30', 4, 1, '2010-03-21 08:07:30')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('张三审批结束', '2010-03-21 08:07:30', 5, 2, '2010-03-21 08:07:30')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('钱五审批结束', '2010-03-21 08:07:31', 5, 3, '2010-03-21 08:07:31')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('张三审批', '2010-03-21 08:07:31', 2, 4, '2010-03-21 08:07:31')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('钱五审批', '2010-03-21 08:07:31', 3, 4, '2010-03-21 08:07:31')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('会签完成', '2010-03-21 08:07:31', 6, 5, '2010-03-21 08:07:31')[0m
+Rendering admin/workflow/index
+Completed in 1250ms (View: 16, DB: 31) | 200 OK [http://localhost/admin/workflow]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:08:08) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 157ms (View: 32, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#start (for 127.0.0.1 at 2010-03-21 16:08:12) [GET]
+  Parameters: {"id"=>"收文"}
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 94ms (View: 32, DB: 0) | 200 OK [http://localhost/workflow/start/%E6%94%B6%E6%96%87]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:08:14) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:08:14', '2010-03-21 08:08:14')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, NULL, NULL, '2010-03-21 08:08:14', '2010-03-21 08:08:14')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:08:14', 1, 1, 'ShouWenDocument', 1, '2010-03-21 08:08:14')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:08:15', NULL, NULL, NULL, 2, '2010-03-21 08:08:15')[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:08:15', NULL, NULL, NULL, 3, '2010-03-21 08:08:15')[0m
+  [4;36;1mWorkflowStep Delete all (156.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (1)) [0m
+Completed in 875ms (View: 0, DB: 156) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:10:28) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:10:43) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (172.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:10:52) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (63.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-21 16:11:07) [GET]
+Redirected to http://localhost:3000/dash_board
+Completed in 0ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:11:07) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (172.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:11:26) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (15.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:11:54) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (16.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:12:19) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 125ms (View: 15, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#start (for 127.0.0.1 at 2010-03-21 16:12:20) [GET]
+  Parameters: {"id"=>"收文"}
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 171ms (View: 31, DB: 0) | 200 OK [http://localhost/workflow/start/%E6%94%B6%E6%96%87]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:12:21) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:12:21', '2010-03-21 08:12:21')[0m
+  [4;35;1mWorkflowDefinition Load (15.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, '收文', NULL, '2010-03-21 08:12:21', '2010-03-21 08:12:21')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:12:21', 2, 2, 'ShouWenDocument', 1, '2010-03-21 08:12:21')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:12:21', NULL, NULL, NULL, 2, '2010-03-21 08:12:21')[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:12:22', NULL, NULL, NULL, 3, '2010-03-21 08:12:22')[0m
+  [4;36;1mWorkflowStep Delete all (78.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (4)) [0m
+Completed in 625ms (View: 0, DB: 109) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:13:42) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (15.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (188.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:13:51) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#start (for 127.0.0.1 at 2010-03-21 16:13:52) [GET]
+  Parameters: {"id"=>"收文"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/workflow/start/%E6%94%B6%E6%96%87]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:13:56) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mShouWenDocument Create (0.0ms)[0m   [0mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:13:56', '2010-03-21 08:13:56')[0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;35;1mWorkflowInstance Create (0.0ms)[0m   [0mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, '收文', NULL, '2010-03-21 08:13:56', '2010-03-21 08:13:56')[0m
+  [4;36;1mWorkflowStepDefinition Load (16.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:13:56', 3, 3, 'ShouWenDocument', 1, '2010-03-21 08:13:56')[0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (15.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:13:56', NULL, NULL, NULL, 2, '2010-03-21 08:13:56')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:13:56', NULL, NULL, NULL, 3, '2010-03-21 08:13:56')[0m
+  [4;35;1mWorkflowStep Delete all (79.0ms)[0m   [0mDELETE FROM "workflow_steps" WHERE ("id" IN (7)) [0m
+Completed in 641ms (View: 0, DB: 110) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:15:20) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+
+ActionView::TemplateError (undefined method `workflow_definition' for nil:NilClass) on line #13 of app/views/dash_board/index.html.erb:
+10: <p>
+11:   <b> This is the workflows that currently active:<br /> </b>
+12:   <%@applicable_workflow_steps.each do |step| %>
+13:       <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
+14:       <br/>
+15:   <%end%>
+16: 
+
+    app/views/dash_board/index.html.erb:13
+    app/views/dash_board/index.html.erb:12:in `each'
+    app/views/dash_board/index.html.erb:12
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+    D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+    D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+    -e:1:in `load'
+    -e:1
+
+Rendered rescues/_trace (79.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:15:28) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#start (for 127.0.0.1 at 2010-03-21 16:15:29) [GET]
+  Parameters: {"id"=>"收文"}
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 62ms (View: 0, DB: 0) | 200 OK [http://localhost/workflow/start/%E6%94%B6%E6%96%87]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:15:30) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (16.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:15:30', '2010-03-21 08:15:30')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, '收文', NULL, '2010-03-21 08:15:30', '2010-03-21 08:15:30')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:15:31', 4, 4, 'ShouWenDocument', 1, '2010-03-21 08:15:31')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:15:31', 4, 4, 'ShouWenDocument', 2, '2010-03-21 08:15:31')[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:15:31', 4, 4, 'ShouWenDocument', 3, '2010-03-21 08:15:31')[0m
+  [4;36;1mWorkflowStep Delete all (140.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (10)) [0m
+Completed in 1375ms (View: 0, DB: 172) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:15:44) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 63ms (View: 16, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:15:47) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'qianwu')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 62ms (View: 15, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#run (for 127.0.0.1 at 2010-03-21 16:16:16) [GET]
+  Parameters: {"id"=>"11"}
+  [4;35;1mWorkflowStep Load (0.0ms)[0m   [0mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = '11') LIMIT 1[0m
+  [4;36;1mShouWenDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 4) [0m
+Rendering template within layouts/workflow_run
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 2) [0m
+Completed in 94ms (View: 78, DB: 0) | 200 OK [http://localhost/workflow/run/11]
+
+
+Processing WorkflowController#transit (for 127.0.0.1 at 2010-03-21 16:16:17) [POST]
+  Parameters: {"workflow_transition"=>"张三审批结束", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_step_id"=>"11"}
+  [4;35;1mWorkflowStep Load (0.0ms)[0m   [0mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = 11) [0m
+  [4;36;1mShouWenDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 4) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 2 AND (name='张三审批结束')) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Delete all (94.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (11)) [0m
+Completed in 406ms (View: 0, DB: 94) | 200 OK [http://localhost/workflow/transit]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:16:19) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 62ms (View: 16, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#run (for 127.0.0.1 at 2010-03-21 16:16:22) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mWorkflowStep Load (0.0ms)[0m   [0mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = '12') LIMIT 1[0m
+  [4;36;1mShouWenDocument Load (16.0ms)[0m   [0;1mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 4) [0m
+Rendering template within layouts/workflow_run
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 4) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 3) [0m
+Completed in 1797ms (View: 1766, DB: 16) | 200 OK [http://localhost/workflow/run/12]
+
+
+Processing WorkflowController#transit (for 127.0.0.1 at 2010-03-21 16:16:38) [POST]
+  Parameters: {"workflow_transition"=>"钱五审批结束", "authenticity_token"=>"nU/N3PIq+qim3oz0TBSOhcHG81A7daNZUW4kwoqDi10=", "workflow_step_id"=>"12"}
+  [4;35;1mWorkflowStep Load (0.0ms)[0m   [0mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = 12) [0m
+  [4;36;1mShouWenDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 4) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 3 AND (name='钱五审批结束')) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Delete all (94.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (12)) [0m
+Completed in 141ms (View: 0, DB: 94) | 200 OK [http://localhost/workflow/transit]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:16:39) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'qianwu')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') [0m
+Rendering dash_board/index
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#start (for 127.0.0.1 at 2010-03-21 16:17:29) [GET]
+  Parameters: {"id"=>"收文"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 62ms (View: 15, DB: 0) | 200 OK [http://localhost/workflow/start/%E6%94%B6%E6%96%87]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:17:31) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mShouWenDocument Create (0.0ms)[0m   [0mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:17:31', '2010-03-21 08:17:31')[0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;35;1mWorkflowInstance Create (0.0ms)[0m   [0mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, '收文', NULL, '2010-03-21 08:17:31', '2010-03-21 08:17:31')[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:17:31', 5, 5, 'ShouWenDocument', 1, '2010-03-21 08:17:31')[0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:17:31', 5, 5, 'ShouWenDocument', 2, '2010-03-21 08:17:31')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "document_type", "workflow_step_definition_id", "created_at") VALUES('2010-03-21 08:17:31', 5, 5, 'ShouWenDocument', 3, '2010-03-21 08:17:31')[0m
+  [4;35;1mWorkflowStep Delete all (94.0ms)[0m   [0mDELETE FROM "workflow_steps" WHERE ("id" IN (13)) [0m
+Completed in 672ms (View: 0, DB: 94) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:17:33) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (15.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."created_at" AS t0_r5, "workflow_steps"."updated_at" AS t0_r6, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;36;1mWorkflowInstance Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 5) [0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 62ms (View: 16, DB: 15) | 200 OK [http://localhost/dash_board]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (109.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (78.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRefundRequests (20100208124200)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "refund_requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "amount" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100208124200')[0m
+Migrating to CreateWorkflowInstances (20100208124408)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "workflow_definition_id" integer, "workflow_name" varchar(255), "status" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100208124408')[0m
+Migrating to CreateWorkflowDefinitions (20100208124555)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_definitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "version" varchar(255), "document_cls" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100208124555')[0m
+Migrating to CreateWorkflowSteps (20100210065723)
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCREATE TABLE "workflow_steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "workflow_instance_id" integer, "workflow_step_definition_id" integer, "document_type" varchar(255), "document_id" integer, "steptype" varchar(255), "join_count" integer, "should_join_count" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100210065723')[0m
+Migrating to CreateWorkflowStepDefinitions (20100210070345)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_step_definitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "participant_definition" varchar(255), "condition" varchar(255), "nodetype" varchar(255), "workflow_definition_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100210070345')[0m
+Migrating to CreateWorkflowTransitionDefinitions (20100210075727)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "workflow_transition_definitions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "workflow_step_definition_id" integer, "to_step_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100210075727')[0m
+Migrating to CreateShouWenDocuments (20100321060029)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "shou_wen_documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100321060029')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("refund_requests")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("shou_wen_documents")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_definitions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("workflow_instances")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_step_definitions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("workflow_steps")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("workflow_transition_definitions")[0m
+
+
+Processing Admin::WorkflowController#index (for 127.0.0.1 at 2010-03-21 16:50:49) [GET]
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;35;1mWorkflowDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_definitions" ("name", "updated_at", "version", "document_cls", "created_at") VALUES('收文', '2010-03-21 08:50:49', '1.0', 'ShouWenDocument', '2010-03-21 08:50:49')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('收文', 1, '2010-03-21 08:50:49', NULL, NULL, 'start', '2010-03-21 08:50:49')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('张三审批', 1, '2010-03-21 08:50:49', 'zhangsan', NULL, NULL, '2010-03-21 08:50:49')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('钱五审批', 1, '2010-03-21 08:50:49', 'qianwu', NULL, NULL, '2010-03-21 08:50:49')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('fork1', 1, '2010-03-21 08:50:49', NULL, NULL, 'fork', '2010-03-21 08:50:49')[0m
+  [4;36;1mWorkflowStepDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('join1', 1, '2010-03-21 08:50:49', NULL, NULL, 'join', '2010-03-21 08:50:49')[0m
+  [4;35;1mWorkflowStepDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_step_definitions" ("name", "workflow_definition_id", "updated_at", "participant_definition", "condition", "nodetype", "created_at") VALUES('收文结束', 1, '2010-03-21 08:50:49', NULL, NULL, 'end', '2010-03-21 08:50:49')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('办公室主任会签', '2010-03-21 08:50:50', 4, 1, '2010-03-21 08:50:50')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('张三审批结束', '2010-03-21 08:50:50', 5, 2, '2010-03-21 08:50:50')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (16.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('钱五审批结束', '2010-03-21 08:50:50', 5, 3, '2010-03-21 08:50:50')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('张三审批', '2010-03-21 08:50:50', 2, 4, '2010-03-21 08:50:50')[0m
+  [4;36;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('钱五审批', '2010-03-21 08:50:50', 3, 4, '2010-03-21 08:50:50')[0m
+  [4;35;1mWorkflowTransitionDefinition Create (0.0ms)[0m   [0mINSERT INTO "workflow_transition_definitions" ("name", "updated_at", "to_step_id", "workflow_step_definition_id", "created_at") VALUES('会签完成', '2010-03-21 08:50:50', 6, 5, '2010-03-21 08:50:50')[0m
+Rendering admin/workflow/index
+Completed in 1672ms (View: 250, DB: 16) | 200 OK [http://localhost/admin/workflow]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:50:51) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 62ms (View: 16, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#start (for 127.0.0.1 at 2010-03-21 16:50:52) [GET]
+  Parameters: {"id"=>"收文"}
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1 AND (nodetype = 'start')) LIMIT 1[0m
+Rendering template within layouts/workflow
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1) [0m
+Completed in 63ms (View: 0, DB: 0) | 200 OK [http://localhost/workflow/start/%E6%94%B6%E6%96%87]
+
+
+Processing WorkflowController#invoke (for 127.0.0.1 at 2010-03-21 16:53:04) [POST]
+  Parameters: {"workflow_name"=>"收文", "workflow_transition"=>"办公室主任会签", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_instance_id"=>"new"}
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE (name = '收文') LIMIT 1[0m
+  [4;36;1mShouWenDocument Create (0.0ms)[0m   [0;1mINSERT INTO "shou_wen_documents" ("updated_at", "created_at") VALUES('2010-03-21 08:53:04', '2010-03-21 08:53:04')[0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."name" = '收文' AND "workflow_definitions"."version" = '1.0') LIMIT 1[0m
+  [4;36;1mWorkflowInstance Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_instances" ("workflow_definition_id", "workflow_name", "status", "updated_at", "created_at") VALUES(1, '收文', NULL, '2010-03-21 08:53:04', '2010-03-21 08:53:04')[0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions".workflow_definition_id = 1) [0m
+  [4;36;1mWorkflowStep Create (15.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "steptype", "document_type", "join_count", "workflow_step_definition_id", "should_join_count", "created_at") VALUES('2010-03-21 08:53:05', 1, 1, NULL, 'ShouWenDocument', NULL, 1, NULL, '2010-03-21 08:53:05')[0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 1 AND (name='办公室主任会签')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 4) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 4) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "steptype", "document_type", "join_count", "workflow_step_definition_id", "should_join_count", "created_at") VALUES('2010-03-21 08:53:05', 1, 1, NULL, 'ShouWenDocument', NULL, 2, NULL, '2010-03-21 08:53:05')[0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "steptype", "document_type", "join_count", "workflow_step_definition_id", "should_join_count", "created_at") VALUES('2010-03-21 08:53:05', 1, 1, NULL, 'ShouWenDocument', NULL, 3, NULL, '2010-03-21 08:53:05')[0m
+  [4;36;1mWorkflowStep Delete all (94.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (1)) [0m
+Completed in 703ms (View: 0, DB: 109) | 200 OK [http://localhost/workflow/invoke]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:53:06) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 188ms (View: 78, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#run (for 127.0.0.1 at 2010-03-21 16:53:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mWorkflowStep Load (0.0ms)[0m   [0mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = '2') LIMIT 1[0m
+  [4;36;1mShouWenDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 1) [0m
+Rendering template within layouts/workflow_run
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 2) [0m
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/workflow/run/2]
+
+
+Processing WorkflowController#transit (for 127.0.0.1 at 2010-03-21 16:54:13) [POST]
+  Parameters: {"workflow_transition"=>"张三审批结束", "authenticity_token"=>"hKh0RiYjYbA6fR7s2WeJpwmTeETAWV3XfJR7QLcMRLA=", "workflow_step_id"=>"2"}
+  [4;35;1mWorkflowStep Load (0.0ms)[0m   [0mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = 2) [0m
+  [4;36;1mShouWenDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 1) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 2) [0m
+  [4;36;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 2 AND (name='张三审批结束')) [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Create (0.0ms)[0m   [0;1mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "steptype", "document_type", "join_count", "workflow_step_definition_id", "should_join_count", "created_at") VALUES('2010-03-21 08:54:13', 1, 1, NULL, 'ShouWenDocument', NULL, 5, NULL, '2010-03-21 08:54:13')[0m
+  [4;35;1mWorkflowStep Delete all (141.0ms)[0m   [0mDELETE FROM "workflow_steps" WHERE ("id" IN (2)) [0m
+Completed in 344ms (View: 0, DB: 141) | 200 OK [http://localhost/workflow/transit]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:54:20) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;36;1mWorkflowInstance Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 62ms (View: 15, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:57:33) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'qianwu')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: near "&": syntax error: SELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' && steptype <> 'end' && workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "&": syntax error: SELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps"  LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' && steptype <> 'end' && workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') ):
+  lib/workflow/active_record_workflow_store.rb:89:in `applicable_workflow_steps'
+  lib/workflow/workflow_engine.rb:65:in `applicable_workflow_steps'
+  app/controllers/dash_board_controller.rb:10:in `index'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (156.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:57:53) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSQLite3::SQLException: near "&": syntax error: SELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' && steptype <> 'end' && workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "&": syntax error: SELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps"  LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' && steptype <> 'end' && workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') ):
+  lib/workflow/active_record_workflow_store.rb:89:in `applicable_workflow_steps'
+  lib/workflow/workflow_engine.rb:65:in `applicable_workflow_steps'
+  app/controllers/dash_board_controller.rb:10:in `index'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:76:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `catch'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:74:in `pre_process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:57:in `process'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/connection.rb:42:in `receive_data'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run_machine'
+  D:/Ruby/lib/ruby/gems/1.8/gems/eventmachine-0.12.10-x86-mswin32-60/lib/eventmachine.rb:256:in `run'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/backends/base.rb:57:in `start'
+  D:/Ruby/lib/ruby/gems/1.8/gems/thin-1.2.7-x86-mswin32/lib/thin/server.rb:156:in `start'
+  -e:1:in `load'
+  -e:1
+
+Rendered rescues/_trace (78.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:58:13) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'qianwu')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (16.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' & steptype <> 'end' & workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') [0m
+Rendering dash_board/index
+  [4;36;1mWorkflowInstance Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 359ms (View: 109, DB: 16) | 200 OK [http://localhost/dash_board]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:58:18) [GET]
+  [4;36;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;35;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' & steptype <> 'end' & workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;36;1mWorkflowInstance Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 63ms (View: 16, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing WorkflowController#run (for 127.0.0.1 at 2010-03-21 16:58:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = '3') LIMIT 1[0m
+  [4;35;1mShouWenDocument Load (0.0ms)[0m   [0mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 1) [0m
+Rendering template within layouts/workflow_run
+  [4;36;1mWorkflowInstance Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;35;1mWorkflowDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 3) [0m
+Completed in 78ms (View: 47, DB: 0) | 200 OK [http://localhost/workflow/run/3]
+
+
+Processing WorkflowController#transit (for 127.0.0.1 at 2010-03-21 16:58:26) [POST]
+  Parameters: {"workflow_transition"=>"钱五审批结束", "authenticity_token"=>"nU/N3PIq+qim3oz0TBSOhcHG81A7daNZUW4kwoqDi10=", "workflow_step_id"=>"3"}
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE ("workflow_steps"."id" = 3) [0m
+  [4;35;1mShouWenDocument Load (0.0ms)[0m   [0mSELECT * FROM "shou_wen_documents" WHERE ("shou_wen_documents"."id" = 1) [0m
+  [4;36;1mWorkflowStepDefinition Load (15.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 3) [0m
+  [4;35;1mWorkflowTransitionDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_transition_definitions" WHERE ("workflow_transition_definitions".workflow_step_definition_id = 3 AND (name='钱五审批结束')) [0m
+  [4;36;1mWorkflowStepDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;35;1mWorkflowStep Create (0.0ms)[0m   [0mINSERT INTO "workflow_steps" ("updated_at", "document_id", "workflow_instance_id", "steptype", "document_type", "join_count", "workflow_step_definition_id", "should_join_count", "created_at") VALUES('2010-03-21 08:58:26', 1, 1, 'join', 'ShouWenDocument', NULL, 5, NULL, '2010-03-21 08:58:26')[0m
+  [4;36;1mWorkflowStep Delete all (140.0ms)[0m   [0;1mDELETE FROM "workflow_steps" WHERE ("id" IN (3)) [0m
+Completed in 297ms (View: 16, DB: 155) | 200 OK [http://localhost/workflow/transit]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:58:33) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'qianwu')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' & steptype <> 'end' & workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 78ms (View: 31, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:58:36) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' & steptype <> 'end' & workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 78ms (View: 15, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:58:47) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'qianwu')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' & steptype <> 'end' & workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 62ms (View: 16, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 16:59:00) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype <> 'join' & steptype <> 'end' & workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+  [4;35;1mWorkflowInstance Load (16.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mWorkflowDefinition Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "workflow_instances" WHERE ("workflow_instances"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "workflow_definitions" WHERE ("workflow_definitions"."id" = 1) [0m
+Completed in 63ms (View: 0, DB: 16) | 200 OK [http://localhost/dash_board]
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" [0m
+  [4;35;1mWorkflowStep Load (0.0ms)[0m   [0mSELECT * FROM "workflow_steps" [0m
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE (steptype <> 'join' & steptype <> 'end') [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE (steptype <> 'join' & steptype <> 'end') [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE (steptype <> 'join' & steptype <> 'end') [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE (steptype <> 'join' & steptype <> 'end') [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE (steptype <> 'join' & steptype <> 'end') [0m
+  [4;35;1mWorkflowStepDefinition Load (0.0ms)[0m   [0mSELECT * FROM "workflow_step_definitions" WHERE ("workflow_step_definitions"."id" = 5) [0m
+  [4;36;1mWorkflowStep Load (0.0ms)[0m   [0;1mSELECT * FROM "workflow_steps" WHERE (steptype != 'join' and steptype != 'end') [0m
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 17:01:33) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'zhangsan')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype != 'join' and steptype != 'end' and workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='zhangsan') [0m
+Rendering dash_board/index
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]
+
+
+Processing DashBoardController#index (for 127.0.0.1 at 2010-03-21 17:01:34) [GET]
+  [4;35;1mWorkflowDefinition Load Including Associations (0.0ms)[0m   [0mSELECT "workflow_definitions"."id" AS t0_r0, "workflow_definitions"."name" AS t0_r1, "workflow_definitions"."version" AS t0_r2, "workflow_definitions"."document_cls" AS t0_r3, "workflow_definitions"."created_at" AS t0_r4, "workflow_definitions"."updated_at" AS t0_r5, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_definitions" LEFT OUTER JOIN "workflow_step_definitions" ON workflow_step_definitions.workflow_definition_id = workflow_definitions.id WHERE (workflow_step_definitions.nodetype = 'start' and ( workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition = 'qianwu')) [0m
+  [4;36;1mWorkflowStep Load Including Associations (0.0ms)[0m   [0;1mSELECT "workflow_steps"."id" AS t0_r0, "workflow_steps"."workflow_instance_id" AS t0_r1, "workflow_steps"."workflow_step_definition_id" AS t0_r2, "workflow_steps"."document_type" AS t0_r3, "workflow_steps"."document_id" AS t0_r4, "workflow_steps"."steptype" AS t0_r5, "workflow_steps"."join_count" AS t0_r6, "workflow_steps"."should_join_count" AS t0_r7, "workflow_steps"."created_at" AS t0_r8, "workflow_steps"."updated_at" AS t0_r9, "workflow_step_definitions"."id" AS t1_r0, "workflow_step_definitions"."name" AS t1_r1, "workflow_step_definitions"."participant_definition" AS t1_r2, "workflow_step_definitions"."condition" AS t1_r3, "workflow_step_definitions"."nodetype" AS t1_r4, "workflow_step_definitions"."workflow_definition_id" AS t1_r5, "workflow_step_definitions"."created_at" AS t1_r6, "workflow_step_definitions"."updated_at" AS t1_r7 FROM "workflow_steps" LEFT OUTER JOIN "workflow_step_definitions" ON "workflow_step_definitions".id = "workflow_steps".workflow_step_definition_id WHERE (steptype != 'join' and steptype != 'end' and workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition='normal_employee' or workflow_step_definitions.participant_definition='qianwu') [0m
+Rendering dash_board/index
+Completed in 63ms (View: 0, DB: 0) | 200 OK [http://localhost/dash_board]

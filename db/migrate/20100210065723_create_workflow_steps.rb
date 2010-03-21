@@ -7,6 +7,10 @@ class CreateWorkflowSteps < ActiveRecord::Migration
       t.string :document_type
       t.integer :document_id
 
+      t.string :steptype
+      t.integer :join_count
+      t.integer :should_join_count
+
       t.timestamps
     end
   end

@@ -65,10 +65,12 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
     #convert from workflow_definition to persistent_workflow_definition
     persistent_workflow_definition = self.find_workflow_definition(workflow_definition.name, workflow_definition.version)
     workflow_instance.workflow_definition = persistent_workflow_definition
+    workflow_instance.workflow_name =  persistent_workflow_definition.name
     workflow_instance.save!
 
     workflow_step = WorkflowStep.new
     workflow_step.workflow_instance = workflow_instance
+
     workflow_step.workflow_step_definition = persistent_workflow_definition.workflow_step_definitions[0]
 
     workflow_step.document = document
@@ -80,11 +82,12 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
 
   def applicable_workflow_steps(user)
     if user =~ /manager1/
-      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ['workflow_step_definitions.participant_definition=?', 'manager1'])
+      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ["steptype <> 'join' and steptype <> 'end' and 'workflow_step_definitions.participant_definition=?", 'manager1'])
     elsif user =~ /manager2/
-      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ['workflow_step_definitions.participant_definition=?', 'manager2'])
+      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ["steptype <> 'join' and steptype <> 'end' and 'workflow_step_definitions.participant_definition=?", 'manager2'])
     else
-      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ['workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition=? or workflow_step_definitions.participant_definition=?', 'normal_employee', user])
+      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ["steptype != 'join' and steptype != 'end' and workflow_step_definitions.participant_definition is null " +
+              "or workflow_step_definitions.participant_definition=? or workflow_step_definitions.participant_definition=?", 'normal_employee', user])
     end
 
     result
@@ -99,6 +102,7 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
     transition = step.workflow_step_definition.workflow_transition_definitions.find(:all, :conditions=> ["name=?", transition_name])[0] #should only have one
     #should warn when transition is not found or more than one found?
     workflow_step = WorkflowStep.new
+
     workflow_step.workflow_instance_id = step.workflow_instance_id
     workflow_step.workflow_step_definition_id = transition.to_step_id
     workflow_step.document = document
@@ -112,16 +116,29 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
 
   def handle_incoming_workflow_step(workflow_step)
     #if workflow_step is special node, do we need to save it?
+
     if workflow_step.workflow_step_definition.nodetype == "fork"
       #p workflow_step.workflow_step_definition.workflow_transition_definitions
       # puts workflow_step.workflow_step_definition.workflow_transition_definitions.size
       workflow_step.workflow_step_definition.workflow_transition_definitions.each do |transition_definition|
-        workflow_step = WorkflowStep.new
-        workflow_step.workflow_instance_id = workflow_step.workflow_instance_id #inherit from it
-        workflow_step.workflow_step_definition_id = transition.to_step_id
-        workflow_step.document = document
-        handle_incoming_workflow_step(workflow_step)
+        step = WorkflowStep.new
+
+        step.workflow_instance_id = workflow_step.workflow_instance_id #inherit from it
+        step.workflow_step_definition_id = transition_definition.to_step_id
+        step.document = workflow_step.document #inherit from it
+        handle_incoming_workflow_step(step)
       end
+    elsif workflow_step.workflow_step_definition.nodetype == "join"
+
+      #new_or_existing_join_step's' join_count+=1
+      #if join_count reachs should_join_count
+
+      #then transit next
+      workflow_step.steptype = "join"
+      workflow_step.save!
+    elsif workflow_step.workflow_step_definition.nodetype == "end"
+      workflow_step.steptype = "end"
+      workflow_step.save!
     else #normal workflow_step
       workflow_step.save!
     end

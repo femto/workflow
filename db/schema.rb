@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(:version => 20100321060029) do
     t.integer  "workflow_step_definition_id"
     t.string   "document_type"
     t.integer  "document_id"
+    t.string   "steptype"
+    t.integer  "join_count"
+    t.integer  "should_join_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
