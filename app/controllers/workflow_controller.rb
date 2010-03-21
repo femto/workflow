@@ -32,7 +32,7 @@ class WorkflowController < ApplicationController
     step_id = params[:id]
     @step = WorkflowStep.find_by_id(step_id)
     @document = @step.document
-    render :file => "#{Rails.root}/workflow_views/#{@document.class.to_s.snake_case}", :layout=>'workflow_run'
+    render :inline => File.read("#{Rails.root}/workflow_views/#{@document.class.to_s.snake_case}.html.erb"), :layout=>'workflow_run'
   end
 
   def invoke

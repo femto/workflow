@@ -10,7 +10,7 @@ Hello <%= session[:current_user] %>
 <p>
   <b> This is the workflows that currently active:<br /> </b>
   <%@applicable_workflow_steps.each do |step| %>
-      <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, "a" %>
+      <%= link_to step.workflow_instance.workflow_definition.name + "&nbsp; step:" + step.workflow_step_definition.name, :controller=>'workflow', :action=>'run', :id=>step.id %>
       <br/>
   <%end%>
 

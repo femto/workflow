@@ -1,7 +1,7 @@
 You are currently running <br/>
 <%= @step.workflow_instance.workflow_definition.name %><br/>
 
-<form action=../transit>
+<%form_tag :controller=>'workflow', :action=>'transit' do %>
   
   <input type=hidden name=workflow_step_id value=<%= @step.id %>>
   <%= yield %>
@@ -9,4 +9,4 @@ You are currently running <br/>
       <input type=Submit value="<%= transition.name %>" name="workflow_transition"/>
 
   <% end %>
-</form>
+<% end %>

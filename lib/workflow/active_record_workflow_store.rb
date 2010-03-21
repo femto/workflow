@@ -84,7 +84,7 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
     elsif user =~ /manager2/
       result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ['workflow_step_definitions.participant_definition=?', 'manager2'])
     else
-      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ['workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition=?', 'normal_employee'])
+      result = WorkflowStep.find(:all, :include=> 'workflow_step_definition', :conditions=> ['workflow_step_definitions.participant_definition is null or workflow_step_definitions.participant_definition=? or workflow_step_definitions.participant_definition=?', 'normal_employee', user])
     end
 
     result
