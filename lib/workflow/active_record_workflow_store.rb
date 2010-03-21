@@ -136,12 +136,38 @@ class ActiveRecordWorkflowStore < AbstractWorkflowStore
       #then transit next
       workflow_step.steptype = "join"
       workflow_step.save!
+      #find out how much should join
+      join_steps = WorkflowStep.find(:all, :conditions => ["workflow_instance_id = ? and workflow_step_definition_id = ? ", workflow_step.workflow_instance_id, workflow_step.workflow_step_definition_id])
+      #p join_steps
+      if join_count_condition_satisfied(workflow_step, join_steps.size)
+
+        join_steps.map(&:delete)
+
+        #puts join_steps[0].workflow_step_definition.workflow_transition_definitions.to_step_id
+        step = WorkflowStep.new
+
+        step.workflow_instance_id = workflow_step.workflow_instance_id
+        step.workflow_step_definition_id = workflow_step.workflow_step_definition.workflow_transition_definitions[0].to_step_id
+        step.document = workflow_step.document
+        handle_incoming_workflow_step(step)
+      end
     elsif workflow_step.workflow_step_definition.nodetype == "end"
       workflow_step.steptype = "end"
       workflow_step.save!
     else #normal workflow_step
       workflow_step.save!
     end
+
+  end
+
+  def join_count_condition_satisfied(workflow_step, size)
+    join_count = workflow_step.workflow_step_definition.
+            workflow_definition.workflow_step_definitions.
+            count(:all, :include=>"workflow_transition_definitions",
+                  :conditions=>["workflow_transition_definitions.to_step_id = ?", workflow_step.workflow_step_definition_id] )
+
+    return size >= join_count 
+
 
   end
 
